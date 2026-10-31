@@ -1,0 +1,47 @@
+# =========================================
+# Dotfiles .gitignore for stilldaemon/dotfiles
+# =========================================
+
+# ── Emacs / Doom Emacs ─────────────────────
+*~                    # Emacs backup files
+\#*\#                 # Emacs auto-save files
+.\#*                  # Emacs lock files
+auto-save-list/       # Auto-save directory
+.org-roam.db*         # Org-roam SQLite database (binary, regenerates)
+*.elc                 # Compiled Emacs Lisp
+elpa/                 # Installed packages (can be regenerated)
+
+# ── Editor Temp Files ─────────────────────
+*.swp                 # Vim swap files
+*.swo                 # Vim swap files (multi-session)
+\.viminfo~            # Vim info backup
+.netrwpath            # Netrw history
+
+# ── Shell & Terminal ─────────────────────
+.history              # Shell history (security risk if committed)
+
+# ── Cache & Runtime ─────────────────────
+.cache/               # Application cache directories
+.nvlog/               # Neovim logs
+.state/               # Application state files
+.nvlog/               # Neovim logging directory
+
+# ── Binary & Machine-Specific ───────────
+*.png                 # Wallpapers (optional: keep these in repo)
+*.jpg                 # Wallpapers
+wallpaper/            # Uncomment if wallpapers are too large
+
+# ── Secrets & Credentials ───────────────
+*.pem                 # Certificate/private key files
+*.key                 # Private keys
+*.env                 # Environment variables with secrets
+
+# ── OS & System Junk ────────────────────
+.DS_Store             # macOS finder metadata
+Thumbs.db             # Windows thumbnail cache
+desktop.ini           # Windows folder config
+
+# ── Symlink Safety ──────────────────────
+# Prevent accidentally linking outside the repo
+../.config/
+../../.config/
