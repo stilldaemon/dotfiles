@@ -47,9 +47,3 @@ function y() {
   fi
   rm -f -- "$tmp"
 }
-
-# Auto-start ssh-agent and cache key for 7 days
-if ! pgrep -u "$USER" ssh-agent >/dev/null; then
-  eval "$(ssh-agent -s)" >/dev/null
-fi
-ssh-add -l >/dev/null 2>&1 || ssh-add ~/.ssh/id_ed25519
