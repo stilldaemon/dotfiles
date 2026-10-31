@@ -1,0 +1,60 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 14,
+  "spacing": 0,
+  
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": [],
+  "modules-right": ["clock", "cpu", "memory", "pulseaudio", "battery"],
+
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": 2
+    }
+  },
+  
+  "clock": {
+    "interval": 60,
+    "format": "{:L%I:%M %p}",
+    "format-alt": "{:L%Y年%m月%d日 (%a)}",
+    "tooltip-format": "{:L%I:%M:%S %p}\n{:L%Y年%m月%d日 (%a)}",
+    "locale": "ja_JP.utf8"
+  },
+  
+  "cpu": {
+    "interval": 2,
+    "format": "CPU {usage}%",
+    "tooltip": false,
+    "on-click": "kitty --title CPU-Monitor btop"
+  },
+
+  "memory": {
+    "interval": 2,
+    "format": "RAM {percentage}%",
+    "tooltip": false,
+    "on-click": "kitty --title RAM-Monitor sh -c 'watch -n 1 free -h'"
+  },
+
+  "pulseaudio": {
+    "format": "VOL {volume}%",
+    "format-muted": "VOL MUTE",
+    "on-click": "pavucontrol",
+    "tooltip": false
+  },
+
+  "battery": {
+    "interval": 10,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "BAT {capacity}%",
+    "format-charging": "BAT {capacity}% ⚡",
+    "format-plugged": "BAT {capacity}% ⚡",
+    "tooltip": false,
+    "on-click": "kitty --title Battery-Monitor sh -c 'watch -n 2 upower -i $(upower -e | grep BAT)'"
+  }
+}
