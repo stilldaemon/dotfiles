@@ -17,6 +17,7 @@ alias grep='grep --color=auto'
 alias ff='fastfetch'
 alias c='clear'
 alias y='yazi'
+alias vim='nvim'
 alias q='exit'
 alias uu='sudo pacman -Syu'
 
