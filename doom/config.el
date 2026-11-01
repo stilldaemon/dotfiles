@@ -64,7 +64,7 @@
          :unnarrowed t)
         ("t" "IT journey" plain "%?"
          :target (file+head "~/notes/roam/2_areas/it_journey/log/${slug}.org"
-         "* %^{Summary}\n%i\n\n** Details\n** What I Studied\n** Key Takeaways\n** Challenges\n** Tomorrow's Goals")
+         "* %^{Summary}\n%i\n\n** details\n** today's practice\n** key takeaways\n** challenges\n** next steps")
          :unnarrowed t)
         ;; japanese
         ("j" "Japanese")
