@@ -61,7 +61,13 @@
         ("d" "default" plain "%?"
          :target (file+head "~/notes/roam/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n#+date: %U\n")
-        :unnarrowed t)
+         :unnarrowed t)
+        ("t" "IT journey" entry
+         (file+datetree "~/notes/roam/2_areas/IT journey/log/daily.org")
+         "* %^{Summary}\n%i\n\n** Details\n** What I Studied\n** Key Takeaways\n** Challenges\n** Tomorrow's Goals"
+         :empty-lines 1
+         :tree-type month
+         :unnarrowed t)
         ;; japanese
         ("j" "Japanese")
         ("jw" "Japanese → Word" plain (file "~/notes/roam/3_resources/templates/japanese-word.org")
