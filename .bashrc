@@ -5,9 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# doom emacs
-export PATH="$HOME/.config/emacs/bin:$PATH"
+# path config
+export PATH="$HOME/.local/bin:$HOME/.config/emacs/bin:$PATH"
 
+export QT_QPA_PLATFORMTHEME="qt6ct"
+export EDITOR="nvim"
 export MANPAGER='nvim +Man!'
 
 alias ls='ls --color=auto'
@@ -18,8 +20,11 @@ alias y='yazi'
 alias q='exit'
 alias uu='sudo pacman -Syu'
 
-export QT_QPA_PLATFORMTHEME="qt6ct"
-export EDITOR="nvim"
+# history
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTCONTROL=ignoreboth:ignorespace
+shopt -s histappend
 
 # set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
@@ -38,7 +43,7 @@ fi
 # ble.sh (autosuggestions and syntax highlighting)
 source /usr/share/blesh/ble.sh
 
-# --- Yazi Setup ---
+# Yazi Setup
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
   yazi "$@" --cwd-file="$tmp"
