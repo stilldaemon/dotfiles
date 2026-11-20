@@ -167,6 +167,5 @@ configuration {
   }
 }
 
-//@theme "~/.config/rofi/gruvbox.rasi"
+@theme "~/.config/rofi/gruvbox.rasi"
 
-@theme "/usr/share/rofi/themes/dmenu.rasi"

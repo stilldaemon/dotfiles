@@ -1,8 +1,51 @@
+/*
+ * ROFI Color theme — gruvbox, horizontal dmenu
+ * Structure based on Dave Davenport's dmenu theme,
+ * colors converted to gruvbox dark.
+ * Save as ~/.config/rofi/gruvbox.rasi
+ */
+
 * {
-    background:     #282828FF;
-    /*background-alt: #353535FF;*/
-    /*foreground:     #EBDBB2FF;*/
-    /*selected:       #83A598FF;*/
-    /*active:         #B8BB26FF;*/
-    /*urgent:         #FB4934FF;*/
+    background-color:  #282828;
+    border-color:      #83a598;
+    text-color:        #ebdbb2;
+    font:              "JetBrainsMono Nerd Font 11";
+}
+
+window {
+    anchor:     north;
+    location:   north;
+    width:      100%;
+    padding:    4px;
+    children:   [ horibox ];
+}
+
+horibox {
+    orientation: horizontal;
+    children:    [ prompt, entry, listview ];
+}
+
+listview {
+    layout:   horizontal;
+    spacing:  5px;
+    lines:    100;
+}
+
+entry {
+    expand:  false;
+    width:   10em;
+}
+
+element {
+    padding: 0px 2px;
+}
+
+element selected {
+    background-color: #928374;
+    text-color:       #282828;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
 }
